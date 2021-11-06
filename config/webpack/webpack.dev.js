@@ -31,9 +31,7 @@ module.exports = merge(common, {
     client: {
       progress: true,
     },    
-    historyApiFallback: {
-      index: path.join(PROJECT_PATH, './public/index.html')
-    },       
+    historyApiFallback: true,       
     open: true,     
     host: SERVER_HOST,
     port: SERVER_PORT,

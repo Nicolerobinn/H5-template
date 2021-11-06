@@ -1,14 +1,25 @@
-// src/app.tsx
-import React from 'react'
-import style from './index.scss'
-import Test from 'components/Test'
+import * as React from "react";
+import {
+  BrowserRouter as Router,
+  useRoutes,
+} from "react-router-dom";
 
-const App:React.FC<any> = () => {
-  return (
-    <div className={style.app}>
-      <Test name='321' age={3}/>
-    </div>
-  )
+import Dashboard from './pages/Dashboard';
+import AboutPage from './pages/AboutPage'
+
+
+const Routers =  ()=> {
+  const element = useRoutes([
+    {  path: "/",  element: <Dashboard />
+    },
+    { path: "team", element: <AboutPage /> }
+  ]);
+
+  return element ;
 }
-
+const App  =()=>{
+  return <Router>
+  <Routers/>
+</Router>
+}
 export default App
