@@ -97,6 +97,7 @@ module.exports = {
   resolve: {
     alias: {
       'src': path.resolve(PROJECT_PATH, './src'),
+      'pages': path.resolve(PROJECT_PATH, './src/pages'),
       'components': path.resolve(PROJECT_PATH, './src/components'),
       'utils': path.resolve(PROJECT_PATH, './src/utils'),
     },
@@ -121,7 +122,7 @@ module.exports = {
     //   ],
     // }),
     new WebpackBar({
-      name: 'Link Startou!!!', 
+      name: 'OKK!!!', 
       color: '#52c41a' 
     }),
     new ForkTsCheckerWebpackPlugin({

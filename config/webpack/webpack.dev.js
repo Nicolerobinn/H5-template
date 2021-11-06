@@ -7,6 +7,9 @@ const common = require('./webpack.common')
 const { PROJECT_PATH, SERVER_HOST, SERVER_PORT } = require('../constant')
 
 module.exports = merge(common, {
+  infrastructureLogging: {
+    level: 'warn',
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
