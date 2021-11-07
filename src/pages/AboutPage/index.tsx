@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 
 
 const AboutPage = ()=>{
-    return <div>321</div>
+    var a= 1
+    return <div>321 </div>
 }
 export default AboutPage
