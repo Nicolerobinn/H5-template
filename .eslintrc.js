@@ -14,7 +14,6 @@ module.exports = {
   plugins: ['react-hooks'],
   rules: {
     // "error"/"off" 开启/关闭prettier
-    'react-hooks/rules-of-hooks': 'error',
     'prettier/prettier': 'error',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
