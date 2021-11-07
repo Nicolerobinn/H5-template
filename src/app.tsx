@@ -1,6 +1,6 @@
-import * as React from "react";
-import { BrowserRouter } from "react-router-dom";
-import Router from "./router";
+import * as React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './router';
 
 // TODO: 将package.json整理  分出devdependencies
 const App = () => {

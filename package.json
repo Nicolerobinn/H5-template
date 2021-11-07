@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "dev":"yarn start",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack/webpack.prod.js",
     "lint": "eslint . --fix"

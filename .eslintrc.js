@@ -11,7 +11,6 @@ module.exports = {
       version: 'detect'
     }
   },
-  plugins: ['react-hooks'],
   rules: {
     // "error"/"off" 开启/关闭prettier
     'prettier/prettier': 'error',
