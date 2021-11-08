@@ -1,6 +1,7 @@
 import React from 'react';
+import { Counter } from 'src/features/counter/Counter';
+
 const Dashboard = () => {
-  let a= 1;
-  return <div>133223</div>;
+  return <Counter />;
 };
 export default Dashboard;
