@@ -1,5 +1,5 @@
 import React from 'react';
-import { Counter } from 'src/features/counter/Counter';
+import { Counter } from 'src/components/Counter';
 
 const Dashboard = () => {
   return <Counter />;
