@@ -12,6 +12,9 @@
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack/webpack.prod.js"
   },
   "author": "cweb130@163.com",
+  "engines": {
+    "node": ">=16"
+  },
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-runtime": "^7.16.0",
