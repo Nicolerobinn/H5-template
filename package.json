@@ -4,23 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev":"yarn start",
+    "dev": "yarn start",
+    "lint": "yarn lint:es && yarn lint:style",
+    "lint:es": "eslint . --fix",
+    "lint:style": "stylelint --fix \"src/**/*.scss\"",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack/webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack/webpack.prod.js",
-    "lint": "eslint . --fix"
+    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack/webpack.prod.js"
   },
   "author": "cweb130@163.com",
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.js": "eslint --ext .js",
-    "**/*.tsx": "eslint --ext .tsx",
-    "**/*.ts": "eslint --ext .ts",
-    "**/*.jsx": "eslint --ext .jsx"
-  },
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-runtime": "^7.16.0",
@@ -61,16 +52,14 @@
     "webpack-merge": "^5.8.0",
     "webpackbar": "^5.0.0-3"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "ie >= 9",
-    "not op_mini all"
-  ],
   "devDependencies": {
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "stylelint": "^14.0.1",
+    "stylelint-config-booheefe": "^1.0.8"
   }
 }

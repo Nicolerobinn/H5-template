@@ -1,0 +1,12 @@
+{
+  "linters": {
+    "{components,config,src,tools}/**/*.{ts,tsx,js}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "{src,components}/**/*.scss": [
+      "stylelint --fix",
+      "git add"
+    ]
+  }
+}
