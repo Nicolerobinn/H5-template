@@ -3,20 +3,26 @@ const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-
 const common = require('./webpack.common');
 const { PROJECT_PATH } = require('../constant');
-
-module.exports = merge(common, {
+const config = {
   mode: 'production',
   devtool: false,
   target: 'browserslist',
   output: {
-    filename: 'js/[name].[contenthash:8].js',
+    clean: true, // Clean the output directory before emit.
+    filename: '[name].[contenthash:8].js',
+    chunkFilename: '[name].[chunkhash].js',
     path: path.resolve(PROJECT_PATH, './dist'),
     assetModuleFilename: 'images/[name].[contenthash:8].[ext]'
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[name].[contenthash].css',
+      ignoreOrder: true
+    })
+  ],
   optimization: {
     minimize: true,
     splitChunks: {
@@ -33,4 +39,10 @@ module.exports = merge(common, {
       })
     ]
   }
-});
+};
+
+if (process.env.API_ENV === 'rc') {
+  config.devtool = 'source-map';
+  config.output.sourceMapFilename = '[name].[hash].js.map';
+}
+module.exports = merge(common, config);

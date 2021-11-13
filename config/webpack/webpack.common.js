@@ -1,11 +1,10 @@
-const { isDevelopment, isProduction } = require('../env');
+const { isDevelopment } = require('../env');
 const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { PROJECT_PATH } = require('../constant');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // 因为后续要配sass也需要使用到这套规则，所以这里抽离出来
 
 const getCssLoaders = () => {
@@ -19,28 +18,16 @@ const getCssLoaders = () => {
         },
         sourceMap: isDevelopment
       }
-    }
-  ];
-
-  // 开发环境一般用chrom不会有问题，防止开发环境下看样式有一堆前缀影响查看，因此只在生产环境使用
-  isProduction &&
-    cssLoaders.push({
+    },
+    {
       loader: 'postcss-loader',
       options: {
         postcssOptions: {
-          plugins: [
-            isProduction && [
-              'postcss-preset-env',
-              {
-                autoprefixer: {
-                  grid: true
-                }
-              }
-            ]
-          ]
+          config: path.resolve(PROJECT_PATH, './config/postcss.config.js')
         }
       }
-    });
+    }
+  ];
 
   return cssLoaders;
 };
@@ -104,7 +91,6 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '.json']
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new WebpackBar({
       name: 'OKK!!!',
       color: '#52c41a'

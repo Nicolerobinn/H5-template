@@ -32,7 +32,7 @@ module.exports = merge(common, {
   stats: 'errors-only',
   devServer: {
     client: {
-      overlay: true
+      reconnect: 5
     },
     historyApiFallback: true,
     open: true,
