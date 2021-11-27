@@ -9,7 +9,7 @@
     "lint": "yarn lint:es && yarn lint:style",
     "lint:es": "eslint . --fix",
     "lint:style": "stylelint --fix \"src/**/*.scss\"",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack/webpack.dev.js",
+    "start": "cross-env NODE_ENV=development webpack --config ./config/webpack/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack/webpack.prod.js",
     "analyzer": "yarn build  --analyze"
   },
