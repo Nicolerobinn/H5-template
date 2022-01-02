@@ -5,9 +5,9 @@ const WebpackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { PROJECT_PATH } = require('../constant');
-// 因为后续要配sass也需要使用到这套规则，所以这里抽离出来
+// TODO: 考虑是否添加 esbuild-loader 以及 ProvidePlugin全局变量
 
-const getCssLoaders = () => {
+const getCssLoaders = importLoaders => {
   const cssLoaders = [
     isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
     {
@@ -16,7 +16,8 @@ const getCssLoaders = () => {
         modules: {
           localIdentName: '[local]--[hash:base64:5]'
         },
-        sourceMap: isDevelopment
+        sourceMap: isDevelopment,
+        importLoaders
       }
     },
     {
@@ -66,7 +67,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          ...getCssLoaders(),
+          ...getCssLoaders(2),
           {
             loader: 'sass-loader',
             options: {
@@ -77,7 +78,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [...getCssLoaders()]
+        use: [...getCssLoaders(1)]
       }
     ]
   },

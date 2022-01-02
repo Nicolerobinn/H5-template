@@ -9,17 +9,16 @@
   <link rel="stylesheet" href="https://static.boohee.cn/css/reset/1.0.0/reset.min.css" />
   <script>
     (function () {
-      var src = "https://unpkg.com/vconsole/dist/vconsole.min.js";
       if (
-        !/console=true/.test(window.location) &&
-        localStorage.getItem("active-eruda") != "true"
+        !/console=true/.test(window.location)
       )
         return;
+      const src = "https://unpkg.com/vconsole/dist/vconsole.min.js";
       document.write("<scr" + 'ipt src="' + src + '"></scr' + "ipt>");
       document.write("<scr" + "ipt>new window.VConsole();</scr" + "ipt>");
     })();
   </script>
-  <title>boohee</title>
+  <title>Boohee Web</title>
 </head>
 
 <body>

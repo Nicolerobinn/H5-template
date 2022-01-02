@@ -1,9 +1,7 @@
-const { merge } = require('webpack-merge');
 const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const common = require('./webpack.common');
 const { PROJECT_PATH } = require('../constant');
 const config = {
   mode: 'production',
@@ -45,4 +43,4 @@ if (process.env.API_ENV === 'rc') {
   config.devtool = 'source-map';
   config.output.sourceMapFilename = '[name].[hash].js.map';
 }
-module.exports = merge(common, config);
+module.exports = config;

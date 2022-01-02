@@ -1,16 +1,17 @@
 import React, { lazy } from 'react';
 import { useRoutes, RouteObject } from 'react-router-dom';
-import ROUTER_LIST from './routerList';
+import ROUTER_LIST, { RouterObj } from './routerList';
 
-const routerToElement = (): RouteObject[] => {
-  // TODO: 此处没有考虑路由嵌套以及携带参数的情况
-  return ROUTER_LIST.map((e): RouteObject => {
-    const Element = lazy(() => import(`pages/${e.src}`));
+const routerToElement = (list: RouterObj[]): RouteObject[] => {
+  return list.map((route): RouteObject => {
+    const Element = lazy(() => import(`pages/${route.src}`));
     return {
-      path: e.path,
-      element: <Element />
+      path: route.path,
+      element: <Element />,
+      children: route?.children?.length ? routerToElement(route.children) : []
     };
   });
 };
-const Router = () => useRoutes(routerToElement());
+
+const Router = () => useRoutes(routerToElement(ROUTER_LIST));
 export default Router;
