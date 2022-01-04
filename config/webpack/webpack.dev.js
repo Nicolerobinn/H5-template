@@ -1,17 +1,10 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { PROJECT_PATH, SERVER_HOST, SERVER_PORT } = require('../constant');
 
 module.exports = {
   infrastructureLogging: {
     colors: true
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].chunk.css'
-    })
-  ],
   optimization: {
     minimize: false,
     minimizer: [],

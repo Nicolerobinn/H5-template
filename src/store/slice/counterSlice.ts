@@ -1,6 +1,6 @@
 import {
   createSlice,
-  ActionReducerMapBuilder,
+  // ActionReducerMapBuilder,
   PayloadAction
 } from '@reduxjs/toolkit';
 
@@ -29,11 +29,11 @@ export const counterSlice = createSlice({
     incrementByAmount: (state, action: PayloadAction<number>) => {
       state.value += action.payload;
     }
-  },
-  // 额外的reducer，处理异步action的reducer
-  extraReducers: (builder: ActionReducerMapBuilder<CounterState>) => {
-    builder.addCase('ASYNC_', (state: CounterState, { payload }) => {});
   }
+  // 额外的reducer，处理异步action的reducer
+  // extraReducers: (builder: ActionReducerMapBuilder<CounterState>) => {
+  //   builder.addCase('ASYNC_', (state: CounterState, { payload }) => {});
+  // }
   // extraReducers: {
   //   ['ASYNC_']: (state: CounterState, action: PayloadAction<number>) => {}
   // }

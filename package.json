@@ -10,7 +10,7 @@
     "lint:es": "eslint . --fix",
     "lint:style": "stylelint --fix \"src/**/*.scss\"",
     "start": "cross-env NODE_ENV=development webpack serve  --config ./config/webpack/webpack.config.js",
-    "build": "cross-env NODE_ENV=production  --config ./config/webpack/webpack.config.js",
+    "build": "cross-env NODE_ENV=production  webpack --config ./config/webpack/webpack.config.js",
     "analyzer": "yarn build  --analyze",
     "prepare": "node node_modules/husky-ci"
   },
@@ -54,7 +54,6 @@
     "husky-ci": "^1.0.7",
     "lint-staged": "^11.2.6",
     "mini-css-extract-plugin": "^2.4.4",
-    "postcss": "^8.3.11",
     "postcss-loader": "^6.2.0",
     "postcss-preset-env": "^6.7.0",
     "postcss-px-to-viewport": "^1.1.1",
@@ -64,12 +63,12 @@
     "style-loader": "^3.3.1",
     "stylelint": "^14.0.1",
     "stylelint-config-booheefe": "^1.0.8",
+    "typescript": "^4.4.4",
     "webpack": "^5.65.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.4.0",
     "webpack-merge": "^5.8.0",
-    "webpackbar": "^5.0.0-3",
-    "typescript": "^4.4.4"
+    "webpackbar": "^5.0.2"
   }
 }

@@ -6747,10 +6747,10 @@ webpack@^5.65.0:
     watchpack "^2.3.1"
     webpack-sources "^3.2.2"
 
-webpackbar@^5.0.0-3:
+webpackbar@^5.0.2:
   version "5.0.2"
-  resolved "https://registry.npmmirror.com/webpackbar/download/webpackbar-5.0.2.tgz?cache=0&sync_timestamp=1636124846959&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fwebpackbar%2Fdownload%2Fwebpackbar-5.0.2.tgz#d3dd466211c73852741dfc842b7556dcbc2b0570"
-  integrity sha1-091GYhHHOFJ0HfyEK3VW3LwrBXA=
+  resolved "https://repo.huaweicloud.com/repository/npm/webpackbar/-/webpackbar-5.0.2.tgz#d3dd466211c73852741dfc842b7556dcbc2b0570"
+  integrity sha512-BmFJo7veBDgQzfWXl/wwYXr/VFus0614qZ8i9znqcl9fnEdiVkdbi0TedLQ6xAK92HZHDJ0QmyQ0fmuZPAgCYQ==
   dependencies:
     chalk "^4.1.0"
     consola "^2.15.3"
