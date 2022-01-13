@@ -35,12 +35,6 @@ const getCssLoaders = importLoaders => {
 };
 
 module.exports = {
-  cache: {
-    type: 'filesystem',
-    buildDependencies: {
-      config: [__filename]
-    }
-  },
   entry: {
     app: path.resolve(PROJECT_PATH, './src/index.tsx')
   },
@@ -69,18 +63,6 @@ module.exports = {
         loader: 'babel-loader',
         options: { cacheDirectory: true },
         exclude: /node_modules/
-      },
-      {
-        test: /\.less$/,
-        use: [
-          ...getCssLoaders(2),
-          {
-            loader: 'less-loader',
-            options: {
-              sourceMap: isDevelopment
-            }
-          }
-        ]
       },
       {
         test: /\.scss$/,
