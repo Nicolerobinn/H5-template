@@ -21,9 +21,6 @@ module.exports = {
   rules: {
     // "error"/"off" 开启/关闭prettier
     'prettier/prettier': 'error',
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-
     // 取消函数参数需要重新赋值给另一个变量才能使用
     'no-param-reassign': [0],
     // 取消 { a, b, c } 多个变量需要换行
