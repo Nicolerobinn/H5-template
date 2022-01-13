@@ -2749,6 +2749,11 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.nlark.com/escape-string-regexp/download/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha1-FLqDpdNz49MR5a/KKc9b+tllvzQ=
 
+eslint-config-booheefe@^1.2.10:
+  version "1.2.10"
+  resolved "https://nexus.boohee.com/repository/npm-proxy/eslint-config-booheefe/-/eslint-config-booheefe-1.2.10.tgz#3e6e4eaf9a8b794f439c93b9455425e1371e7d92"
+  integrity sha1-Pm5Or5qLeU9DnJO5RVQl4TcefZI=
+
 eslint-config-prettier@^8.3.0:
   version "8.3.0"
   resolved "https://nexus.boohee.com/repository/npm-proxy/eslint-config-prettier/-/eslint-config-prettier-8.3.0.tgz#f7471b20b6fe8a9a9254cc684454202886a2dd7a"
@@ -5289,6 +5294,14 @@ postcss-selector-parser@^6.0.2, postcss-selector-parser@^6.0.4, postcss-selector
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
 
+postcss-sorting@^5.0.1:
+  version "5.0.1"
+  resolved "https://nexus.boohee.com/repository/npm-proxy/postcss-sorting/-/postcss-sorting-5.0.1.tgz#10d5d0059eea8334dacc820c0121864035bc3f11"
+  integrity sha1-ENXQBZ7qgzTazIIMASGGQDW8PxE=
+  dependencies:
+    lodash "^4.17.14"
+    postcss "^7.0.17"
+
 postcss-svgo@^5.0.3:
   version "5.0.3"
   resolved "https://registry.npmmirror.com/postcss-svgo/download/postcss-svgo-5.0.3.tgz#d945185756e5dfaae07f9edb0d3cae7ff79f9b30"
@@ -6228,10 +6241,12 @@ stylehacks@^5.0.1:
     browserslist "^4.16.0"
     postcss-selector-parser "^6.0.4"
 
-stylelint-config-css-modules@^2.3.0:
-  version "2.3.0"
-  resolved "https://nexus.boohee.com/repository/npm-proxy/stylelint-config-css-modules/-/stylelint-config-css-modules-2.3.0.tgz#bf79aaae09ca9fdac37fdd518d1a40a779aa0767"
-  integrity sha1-v3mqrgnKn9rDf91RjRpAp3mqB2c=
+stylelint-config-booheefe@^1.0.8:
+  version "1.0.8"
+  resolved "https://nexus.boohee.com/repository/npm-proxy/stylelint-config-booheefe/-/stylelint-config-booheefe-1.0.8.tgz#542685692c16dfee5c749e7e55587bc37687a840"
+  integrity sha1-VCaFaSwW3+5cdJ5+VVh7w3aHqEA=
+  dependencies:
+    stylelint-order "^3.0.1"
 
 stylelint-config-recommended@^6.0.0:
   version "6.0.0"
@@ -6244,6 +6259,15 @@ stylelint-config-standard@^24.0.0:
   integrity sha1-aCPyB6uZeuC2QfmmNtAHzETXdUE=
   dependencies:
     stylelint-config-recommended "^6.0.0"
+
+stylelint-order@^3.0.1:
+  version "3.1.1"
+  resolved "https://nexus.boohee.com/repository/npm-proxy/stylelint-order/-/stylelint-order-3.1.1.tgz#ba9ea6844d1482f97f31204e7c9605c7b792c294"
+  integrity sha1-up6mhE0Ugvl/MSBOfJYFx7eSwpQ=
+  dependencies:
+    lodash "^4.17.15"
+    postcss "^7.0.17"
+    postcss-sorting "^5.0.1"
 
 stylelint@^14.0.1:
   version "14.0.1"

@@ -1,9 +1,7 @@
 {
   "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-css-modules"
+    "stylelint-config-standard"
   ],
-  "customSyntax": "postcss-less",
   "rules": {
     "selector-class-pattern": null,
     "no-descending-specificity": null,
