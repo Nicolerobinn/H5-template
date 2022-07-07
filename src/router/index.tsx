@@ -1,17 +1,16 @@
 import React, { lazy } from 'react';
-import { useRoutes, RouteObject } from 'react-router-dom';
-import ROUTER_LIST, { RouterObj } from './routerList';
-
-const routerToElement = (list: RouterObj[]): RouteObject[] => {
-  return list.map((route): RouteObject => {
-    const Element = lazy(() => import(`pages/${route.src}`));
-    return {
-      path: route.path,
-      element: <Element />,
-      children: route?.children?.length ? routerToElement(route.children) : []
-    };
-  });
-};
-
-const Router = () => useRoutes(routerToElement(ROUTER_LIST));
+import { useRoutes } from 'react-router-dom';
+const Element = lazy(() => import('pages/Dashboard'));
+const AboutPage = lazy(() => import('pages/AboutPage'));
+const Router = () =>
+  useRoutes([
+    {
+      path: '/',
+      element: <Element />
+    },
+    {
+      path: '/a',
+      element: <AboutPage />
+    }
+  ]);
 export default Router;
